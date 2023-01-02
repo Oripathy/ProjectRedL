@@ -1,10 +1,8 @@
-﻿using UnityEngine;
+﻿using Base;
 
 namespace Map.MapCells.Interfaces
 {
-    public interface IMapCell
+    public interface IMapCell : IPoolableObj
     {
-        public void SetActive(bool isActive);
-        public void SetPosition(Vector3 position);
     }
 }

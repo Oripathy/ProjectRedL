@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Obstacles.Implementation
 {
-    public class ObstaclePool : IObstaclePool
+    public class ObstaclePool
     {
         private const int Capacity = 20;
         private readonly Queue<IObstacle> _pool = new Queue<IObstacle>(Capacity);

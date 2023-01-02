@@ -1,6 +1,5 @@
 ﻿using Map.Implementation;
 using Map.MapCells.Implementation;
-using Map.MapCells.Interfaces;
 using Zenject;
 
 namespace Map
@@ -11,8 +10,7 @@ namespace Map
         {
             Container.BindInterfacesAndSelfTo<MapPresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<MapCellPool>().AsSingle();
-            Container.BindInterfacesAndSelfTo<MapCellPresenter>().AsTransient();
-            Container.BindIFactory<IMapCellFactory>().To<MapCellFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MapCellFactory>().AsSingle();
         }
     }
 }

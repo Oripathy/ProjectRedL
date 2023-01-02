@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Enemies.Implementation
 {
-    public class EnemyPool : IEnemyPool
+    public class EnemyPool
     {
         private const int Capacity = 30;
         private readonly Queue<IEnemy> _pool = new Queue<IEnemy>(Capacity);

@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
+using Base;
 using Map.MapCells.Interfaces;
 using UnityEngine;
 using Zenject;
 
 namespace Map.MapCells.Implementation
 {
-    public class MapCellPool : IMapCellPool
+    public class MapCellPool : IObjectPool<IMapCell>
     {
         private const int Capacity = 50;
         private readonly Queue<IMapCell> _pool = new Queue<IMapCell>(Capacity);

@@ -5,7 +5,7 @@ using Zenject;
 
 namespace Units.Implementation
 {
-    public class UnitPool : IUnitPool
+    public class UnitPool
     {
         private const int Capacity = 10;
         private readonly Queue<IUnit> _pool = new Queue<IUnit>(Capacity);

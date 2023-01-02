@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Map.MapCells.Implementation
 {
-    public class MapCellFactory : IMapCellFactory
+    public class MapCellFactory : IFactory<IMapCell>
     {
         private readonly DiContainer _container;
         private readonly MapCellConfigurations _configurations;
@@ -18,9 +18,11 @@ namespace Map.MapCells.Implementation
         public IMapCell Create()
         {
             var view = _container.InstantiatePrefabForComponent<MapCellView>(_configurations.MapCellPrefab);
-            var presenter = _container.Resolve<MapCellPresenter>();
+            var presenter = _container.Instantiate<MapCellPresenter>();
+            var model = _container.Instantiate<MapCellModel>();
+            presenter.SetModel(model);
             presenter.SetView(view);
-            return presenter;
+            return model;
         }
     }
 }
