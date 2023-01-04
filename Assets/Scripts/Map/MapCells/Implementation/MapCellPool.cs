@@ -6,13 +6,13 @@ using Zenject;
 
 namespace Map.MapCells.Implementation
 {
-    public class MapCellPool : IObjectPool<IMapCell>
+    public class MapCellPool : IObjectPool<MapCellView>
     {
         private const int Capacity = 50;
-        private readonly Queue<IMapCell> _pool = new Queue<IMapCell>(Capacity);
-        private readonly IFactory<IMapCell> _factory;
+        private readonly Queue<MapCellView> _pool = new Queue<MapCellView>(Capacity);
+        private readonly IFactory<MapCellView> _factory;
 
-        public MapCellPool(IFactory<IMapCell> factory)
+        public MapCellPool(IFactory<MapCellView> factory)
         {
             _factory = factory;
             for (var i = 0; i < Capacity; i++)
@@ -21,7 +21,7 @@ namespace Map.MapCells.Implementation
             }
         }
 
-        public IMapCell PoolObject(Vector3 position)
+        public MapCellView PoolObject(Vector3 position)
         {
             if (_pool.Count == 0)
             {

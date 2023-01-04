@@ -18,10 +18,7 @@ namespace Map.MapCells.Implementation
         public IMapCell Create()
         {
             var view = _container.InstantiatePrefabForComponent<MapCellView>(_configurations.MapCellPrefab);
-            var presenter = _container.Instantiate<MapCellPresenter>();
             var model = _container.Instantiate<MapCellModel>();
-            presenter.SetModel(model);
-            presenter.SetView(view);
             return model;
         }
     }
