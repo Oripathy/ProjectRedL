@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject.SpaceFighter;
 
-namespace Containers
+namespace Configurations
 {
     [CreateAssetMenu(fileName = "EnemiesConfigurations", menuName = "Configurations/EnemiesConfigurations")]
     public class EnemiesConfigurations : ScriptableObject

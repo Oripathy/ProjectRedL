@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Obstacles.Implementation;
+using MapObjects.Obstacles.Implementation;
 using UnityEngine;
 
-namespace Containers
+namespace Configurations
 {
     [CreateAssetMenu(fileName = "ObstacleConfigurations", menuName = "Configurations/ObstacleConfigurations")]
     public class ObstacleConfigurations : ScriptableObject

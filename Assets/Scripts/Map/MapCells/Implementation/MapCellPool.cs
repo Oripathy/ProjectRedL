@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Base;
-using Map.MapCells.Interfaces;
 using UnityEngine;
 using Zenject;
 
@@ -35,7 +34,7 @@ namespace Map.MapCells.Implementation
             return cell;
         }
 
-        public void ReturnToPool(IMapCell obj)
+        public void ReturnToPool(MapCellView obj)
         {
             obj.SetActive(false);
             obj.SetPosition(Vector3.zero);

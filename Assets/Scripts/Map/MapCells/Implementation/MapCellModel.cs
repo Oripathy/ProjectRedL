@@ -1,31 +1,57 @@
-﻿using Map.MapCells.Interfaces;
+﻿using System;
+using System.Collections.Generic;
+using Map.Implementation;
 using UnityEngine;
 
 namespace Map.MapCells.Implementation
 {
-    public class MapCellModel : IMapCell
+    public class MapCellModel
     {
-        private Vector3 _position;
-        private int[] _indices;
+        private Indices _indices;
+        private Dictionary<Direction, MapCellModel> _neighborsMap;
 
-        public Vector2 Position => _position;
-        public int[] Indices => _indices;
+        public Indices Indices => _indices;
+        public MapCellModel LeftCell { get; private set; }
+        public MapCellModel RightCell { get; private set; }
+        public MapCellModel UpCell { get; private set; }
+        public MapCellModel DownCell { get; private set; }
+
         public ObjectType OccupiedBy { get; set; }
 
-        public void Initialize(Vector3 position, int[] indices)
+        public void Initialize(Indices indices)
         {
-            _position = position;
             _indices = indices;
         }
 
-        public void SetActive(bool isActive)
+        public void FillNeighborsCells(MapCellModel upCell, MapCellModel rightCell, MapCellModel downCell,
+            MapCellModel leftCell)
         {
-            throw new System.NotImplementedException();
+            UpCell = upCell;
+            RightCell = rightCell;
+            DownCell = downCell;
+            LeftCell = leftCell;
+            if (_neighborsMap != null)
+            {
+                return;
+            }
+            
+            _neighborsMap = new Dictionary<Direction, MapCellModel>
+            {
+                {Direction.Up, UpCell},
+                {Direction.Right, RightCell},
+                {Direction.Down, DownCell},
+                {Direction.Left, LeftCell}
+            };
         }
 
-        public void SetPosition(Vector3 position)
+        public MapCellModel GetNeighborCellOnDirection(Direction direction)
         {
-            throw new System.NotImplementedException();
+            if (_neighborsMap.TryGetValue(direction, out var cell))
+            {
+                return cell;
+            }
+
+            throw new KeyNotFoundException();
         }
     }
 }

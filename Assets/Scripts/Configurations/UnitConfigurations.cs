@@ -1,7 +1,7 @@
-﻿using Units.Implementation;
+﻿using MapObjects.Units.Implementation;
 using UnityEngine;
 
-namespace Containers
+namespace Configurations
 {
     [CreateAssetMenu(fileName = "UnitConfigurations", menuName = "Configurations/UnitConfigurations")]
     public class UnitConfigurations : ScriptableObject

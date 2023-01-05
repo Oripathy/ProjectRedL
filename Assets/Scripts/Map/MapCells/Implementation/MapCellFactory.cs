@@ -1,24 +1,20 @@
-﻿using Containers;
-using Map.MapCells.Interfaces;
-using Zenject;
+﻿using Zenject;
 
 namespace Map.MapCells.Implementation
 {
-    public class MapCellFactory : IFactory<IMapCell>
+    public class MapCellFactory : IFactory<Indices, MapCellModel>
     {
         private readonly DiContainer _container;
-        private readonly MapCellConfigurations _configurations;
 
-        public MapCellFactory(DiContainer container, MapCellConfigurations configurations)
+        public MapCellFactory(DiContainer container)
         {
             _container = container;
-            _configurations = configurations;
         }
 
-        public IMapCell Create()
+        public MapCellModel Create(Indices indices)
         {
-            var view = _container.InstantiatePrefabForComponent<MapCellView>(_configurations.MapCellPrefab);
             var model = _container.Instantiate<MapCellModel>();
+            model.Initialize(indices);
             return model;
         }
     }

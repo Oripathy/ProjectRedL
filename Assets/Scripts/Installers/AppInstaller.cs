@@ -1,7 +1,8 @@
-﻿using Enemies;
+﻿using MainStateMachine;
 using Map;
-using Obstacles;
-using Units;
+using MapObjects.Enemies;
+using MapObjects.Obstacles;
+using MapObjects.Units;
 using Zenject;
 
 namespace Installers
@@ -10,10 +11,11 @@ namespace Installers
     {
         public override void InstallBindings()
         {
-            MapInstaller.Install(Container);
             UnitsInstaller.Install(Container);
             ObstaclesInstaller.Install(Container);
             EnemiesInstaller.Install(Container);
+            MapInstaller.Install(Container);
+            // MainStateMachineInstaller.Install(Container);
         }
     }
 }

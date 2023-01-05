@@ -1,7 +1,7 @@
 ﻿using Map.MapCells.Implementation;
 using UnityEngine;
 
-namespace Containers
+namespace Configurations
 {
     [CreateAssetMenu(fileName = "MapCellConfigurations", menuName = "Configurations/MapCellConfigurations")]
     public class MapCellConfigurations : ScriptableObject

@@ -9,8 +9,10 @@ namespace Map
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<MapPresenter>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MapModel>().AsSingle();
             Container.BindInterfacesAndSelfTo<MapCellPool>().AsSingle();
             Container.BindInterfacesAndSelfTo<MapCellFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MapCellViewFactory>().AsSingle();
         }
     }
 }
