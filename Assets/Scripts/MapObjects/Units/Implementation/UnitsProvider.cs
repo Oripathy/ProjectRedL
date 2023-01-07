@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Configurations;
 using Map.MapCells.Implementation;
 using Zenject;
@@ -11,6 +12,8 @@ namespace MapObjects.Units.Implementation
         private readonly IFactory<Indices, UnitModel> _factory;
         private readonly List<UnitModel> _units;
 
+        public event Action<Indices> UnitViewRequested;
+
         public UnitsProvider(IFactory<Indices, UnitModel> factory, UnitsProviderConfigurations configurations)
         {
             _factory = factory;
@@ -22,6 +25,7 @@ namespace MapObjects.Units.Implementation
         {
             var unit = _factory.Create(indices);
             _units.Add(unit);
+            UnitViewRequested?.Invoke(indices);
         }
     }
 }

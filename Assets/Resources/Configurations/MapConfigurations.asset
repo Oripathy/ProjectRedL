@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59da6e133b104969980c1675e5043aae, type: 3}
   m_Name: MapConfigurations
   m_EditorClassIdentifier: 
-  _rows: 10
+  _rows: 5
   _columns: 10
   _firstCellPosition: {x: 0, y: 0, z: 0}
   _firstUnitsColumn: 10

@@ -8,7 +8,7 @@ namespace MapObjects.Units
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<UnitsProvider>().AsSingle();
-            Container.BindInterfacesAndSelfTo<UnitFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<UnitModelFactory>().AsSingle();
         }
     }
 }

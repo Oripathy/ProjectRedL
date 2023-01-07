@@ -4,12 +4,12 @@ using Zenject;
 
 namespace MapObjects.Units.Implementation
 {
-    public class UnitFactory : IFactory<Indices, UnitModel>
+    public class UnitModelFactory : IFactory<Indices, UnitModel>
     {
         private readonly DiContainer _container;
         private readonly UnitConfigurations _configurations;
 
-        public UnitFactory(DiContainer container, UnitConfigurations configurations)
+        public UnitModelFactory(DiContainer container, UnitConfigurations configurations)
         {
             _container = container;
             _configurations = configurations;
