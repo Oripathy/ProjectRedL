@@ -21,7 +21,7 @@ namespace MainStateMachine
 
         public void Initialize()
         {
-            _mapModel.SetupMap();
+            
         }
 
         public void Dispose()

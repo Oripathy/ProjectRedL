@@ -10,7 +10,6 @@ namespace Map
         {
             Container.BindInterfacesAndSelfTo<MapPresenter>().AsSingle();
             Container.BindInterfacesAndSelfTo<MapModel>().AsSingle();
-            Container.BindInterfacesAndSelfTo<MapCellPool>().AsSingle();
             Container.BindInterfacesAndSelfTo<MapCellFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<MapCellViewFactory>().AsSingle();
         }
