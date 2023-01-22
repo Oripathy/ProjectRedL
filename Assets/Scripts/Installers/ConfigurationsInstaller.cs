@@ -1,4 +1,4 @@
-﻿using Configurations;
+﻿using DomainModel.Configurations;
 using UnityEngine;
 using Zenject;
 

@@ -1,9 +1,4 @@
-﻿using MainStateMachine;
-using Map;
-using MapObjects.Enemies;
-using MapObjects.Obstacles;
-using MapObjects.Units;
-using Zenject;
+﻿using Zenject;
 
 namespace Installers
 {
